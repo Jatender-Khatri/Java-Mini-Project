@@ -1,0 +1,120 @@
+package com.company;
+
+import java.util.Scanner;
+
+public class GymManagementSystem { // Create class
+    Scanner s = new Scanner(System.in); // Take User input
+    String nameOfStudent, rollNumber, month; // Delcare Variable
+    int fee, year;  // Delcare Variable
+    public void menu() // Create method
+    {
+        System.out.println("1. Insert"); // Display Information
+        System.out.println("2. Delete"); // Display Information
+        System.out.println("3. Update"); // Display Information
+        System.out.println("4. View"); // Display Information
+        System.out.println("5. Close or Exit"); // Display Information
+    }
+    public void performed(int number) // Create Constructor
+    {
+        if (number==1)  Check condition if Condition is true
+        {
+            insert(); // Call insert() method
+        }
+        else  if (number==2) //eck condition if Condition is true
+        {
+            delete(); // call delete() method 
+        }
+        else  if (number==3) //Check condition if Condition is true
+        {
+            update(); //call update() methode
+        }
+        else if (number==4) //Check condition if Condition is true
+        {
+            view(); // call view() methode
+        }
+        else // Check condition if Condition is false
+        {
+            System.out.println("Number between (1 to 4)"); 
+        }
+        System.out.println("--------------------------------------------------------"); // Display Information
+    }
+    public  void insert(){ // Create method to Store infomation
+        System.out.println("-------------Please Enter your Registration-------------"); // Display Information
+        System.out.println("Enter the name of the Student : "); // Display Information
+        nameOfStudent = s.next(); // Take name user as a input
+        System.out.println("Enter your Roll Number : "); // Display Information
+        rollNumber = s.next(); // Take roll Number as a input
+        System.out.println("Enter your Fees : "); // Display Information
+        fee = s.nextInt(); // Take fees as a input
+        System.out.println("Enter the Registration Month : "); // Display Information
+        month = s.next(); // Take mouth as a input
+        System.out.println("Enter the registration Year : "); // Display Information
+        year = s.nextInt(); // Take year as a input
+    }
+    public void delete(){ // Create Method to display  delete information
+        System.out.print("Enter the Roll Number : "); // Display Information
+        String rollNo = s.next(); // Take roll Number as a input
+        if (rollNumber.equals(rollNo)) // Check condition if Condition is true
+        {
+            nameOfStudent = null; // name of the Student Become null
+            rollNumber = null;  // roll Number become null
+            fee = 0; // fee Become 0 
+            month = null; // month become  null
+            year = 0; // year become 0
+            System.out.println("-------------- Delete Successfully -------------------"); // to display delete Successfully
+        }
+        else // take condition if condition become false
+        {
+            System.out.println("Roll no " + rollNo + " not found. Please Enter the Correct Roll Number"); // display Some information
+        }
+
+    }
+    public void  view(){ // Create method
+        System.out.println("--------------------------------------------------------");
+        System.out.println("Name of the Student : " + nameOfStudent); // Display Information
+        System.out.println("Roll Number : " + rollNumber); // Display Information
+        System.out.println("Registration : " + fee);  // // Display Information
+        System.out.println("Registration month : " + month); // Display Information
+        System.out.println("Registration year : " + year); // Display Information
+        System.out.println("----------------- View Successfully --------------------");
+
+    }
+    public void update() // Create method to update the Information
+    {
+        System.out.println("------------------------------------------------------------");
+        System.out.println("-------------- Please Update your Information --------------"); // Display Information
+        System.out.print("Enter the Roll Number : "); // Display Information
+        String roll = s.next(); // Take roll Number as a input
+        if (rollNumber.equals(roll)) // Check Condition if Conditon is true
+        {
+            System.out.println("Enter the name of the Student : "); // Display Information
+            nameOfStudent = s.next(); // take Student name as a Input
+            System.out.println("Enter the Roll Number : "); // Display Information
+            rollNumber = s.next(); // take roll Number as a input
+            System.out.println("Enter the Registration fees : "); // Display Information
+            fee =s.nextInt(); // take fees as a input
+            System.out.println("Enter the Registration Month : "); // Display Information
+            month = s.next(); // Take month as a Input
+            System.out.println("Enter the Registration Year : "); // Display Information
+            year = s.nextInt(); // Take year as a input
+
+            System.out.println("---------------- Update Successfully ----------------"); // Display Information
+        }
+        else { // Check Condition if Condition is false
+            System.out.println("Roll number " + roll + " not found. Please enter the correct roll number."); // Display Information
+        }
+    }
+    public static void main(String[] args){ // Create main method
+	      GymManagementSystem gym = new GymManagementSystem(); // Create Object
+        System.out.println("<<<<<<<<<< WEL COME TO GYM MANAGEMENT SYSTEM >>>>>>>>>>>>>"); // Display Information
+        Scanner scanner = new Scanner(System.in); // Create  Scanner Method
+        int choose;
+        do // first Display information then Check Condition
+        {
+            gym.menu(); // class Menu() method
+            System.out.print("Enter the Number from (1 to 4) : "); // Display Information
+            choose = scanner.nextInt(); // Take Integer as a user input
+            gym.performed(choose); // class Construtor
+        }while (choose !=0); // Check Condition
+    } // Close main Method
+} // Close class
