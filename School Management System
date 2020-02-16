@@ -1,0 +1,256 @@
+import java.util.Scanner;
+
+public class SchoolManagementSystem {
+    Scanner s = new Scanner(System.in);
+    String studentName, fatherName, caste, dateOfBirth,email;
+    int age, fees;
+    Long studentMobileNo;
+    Long fatherMobileNo;
+    Long studentCNIC;
+    Long fatherCINC;
+    public  void setMenu()
+    {
+        System.out.println("------------ Menu -----------");
+        System.out.println(" 1. Insert");
+        System.out.println(" 2. Delete");
+        System.out.println(" 3. Update");
+        System.out.println(" 4. View record");
+        System.out.println(" 5. exit");
+    }
+    public void performed(int choose)
+    {
+        if (choose == 1)
+        {
+            insert();
+        }
+        else if (choose==2)
+        {
+            delete();
+        }
+        else if (choose == 3)
+        {
+            update();
+        }
+        else if (choose == 4)
+        {
+            view();
+        }
+        else
+        {
+            System.out.println("Enter the Choose (1to 4 )");
+        }
+    }
+    public void insert(){
+        System.out.println("---------------------------------------------------------------------------");
+        System.out.println("------------------------ Fill the Information -----------------------------");
+        System.out.print("Name (in Blocked Letter) : ");
+        studentName = s.next();
+        System.out.print("Father Name : ");
+        fatherName = s.next();
+        System.out.print("Caste : ");
+        caste = s.next();
+        System.out.print("Date of Birth : ");
+        dateOfBirth = s.next();
+        System.out.print("Age : ");
+        age = s.nextInt();
+        System.out.print("CNIC Number (without ( - )) : ");
+        studentCNIC = s.nextLong();
+        System.out.print("Fees : ");
+        fees = s.nextInt();
+        System.out.print("Father CNIC Number (without ( - )) : ");
+        fatherCINC = s.nextLong();
+        System.out.print("Student Mobile Number : ");
+        studentMobileNo = s.nextLong();
+        System.out.print("Father Mobile Number  : ");
+        fatherMobileNo = s.nextLong();
+        System.out.print("Email Address : ");
+        email = s.next();
+        System.out.println("---------------------- Information Successfully ------------------");
+    }
+    public  void delete()
+    {
+        System.out.println("---------------------------------------------------------------------------");
+        System.out.print("Enter the Name of student : ");
+        String name = s.next();
+
+        if (studentName.equals(name))
+        {
+            studentName = null;
+            fatherName = null;
+            age = 0;
+            fees = 0;
+            fatherMobileNo =(long)0;
+            studentCNIC = (long)0;
+            fatherCINC =(long)0;
+            dateOfBirth = null;
+            email = null;
+            studentMobileNo = (long)0;
+            caste= null;
+            System.out.println("----------------------- Delete Successfully ---------------------------");
+        }
+        else
+        {
+            System.out.println("Name " + name + " not found. Please enter the Correct Name.");
+        }
+    }
+    public  void view()
+    {
+        System.out.print("Enter the Name : ");
+        String name = s.next();
+        if (studentName.equals(name)) {
+            System.out.println("---------------------------------------------------------------------------");
+            System.out.println("Name : " + studentName);
+            System.out.println("Father Name : " + fatherName);
+            System.out.println("Caste : " + caste);
+            System.out.println("Date of Birth : " + dateOfBirth);
+            System.out.println("Age : " + age);
+            System.out.println("CINC Number : " + studentCNIC);
+            System.out.println("Fees : " + fees);
+            System.out.println("Fathe CNIC Number : " + fatherCINC);
+            System.out.println("Student Mobile Number : " + studentMobileNo);
+            System.out.println("Father Mobile Nubmer : " + fatherMobileNo);
+            System.out.println("Email Address  " + email);
+            System.out.println("--------------------------  View Successfully -------------------------------");
+        }
+        else
+        {
+            System.out.println("Name : " + name + " not found. Please enter the Correct Name.");
+        }
+    }
+    public  void update(){
+        System.out.print("Enter the Student name : ");
+        String name = s.next();
+        System.out.println("---------------------------------------------------------------------------");
+        if (studentName.equals(name))
+        {
+            System.out.println("1. Student Name");
+            System.out.println("2. Father Name");
+            System.out.println("3. Caste");
+            System.out.println("4. Date of Birth");
+            System.out.println("5. Age");
+            System.out.println("6. CINC Number (Without ( - ))");
+            System.out.println("7. Fees");
+            System.out.println("8. Father CNIC Number (Without ( - ))");
+            System.out.println("9. Student Mobile Number");
+            System.out.println("10. Father Mobile Number");
+            System.out.println("11. Email Address");
+            System.out.println("12. Update All");
+            System.out.print("Enter the Choose Do you Want update : ");
+            int number = s.nextInt();
+            System.out.println("---------------------------------------------------------------------------");
+            {
+                if (number == 1)
+                {
+                    System.out.print("Name : ");
+                    studentName = s.next();
+                    System.out.println("------------------------- Update Successfully ----------------------------");
+                }
+                else  if (number == 2)
+                {
+                    System.out.print("Father Name : ");
+                    fatherName = s.next();
+                    System.out.println("------------------------- Update Successfully ----------------------------");
+                }
+                else if (number == 3)
+                {
+                    System.out.print("Caste : ");
+                    caste = s.next();
+                    System.out.println("------------------------- Update Successfully ----------------------------");
+                }
+                else  if (number == 4)
+                {
+                    System.out.print("Date of Birth : ");
+                    dateOfBirth = s.next();
+                    System.out.println("------------------------- Update Successfully ----------------------------");
+                }
+                else  if (number == 5)
+                {
+                    System.out.print("Age : ");
+                    age = s.nextInt();
+                    System.out.println("------------------------- Update Successfully ----------------------------");
+                }
+                else  if (number == 6)
+                {
+                    System.out.print("CNIC Number (Without ( - )) : ");
+                    studentCNIC = s.nextLong();
+                    System.out.println("------------------------- Update Successfully ----------------------------");
+                }
+                else if (number == 7)
+                {
+                    System.out.print("Fees : ");
+                    fees = s.nextInt();
+                    System.out.println("------------------------- Update Successfully ----------------------------");
+                }
+                else if (number == 8)
+                {
+                    System.out.print("Father CNIC Number (Without ( - )) : ");
+                    fatherCINC  = s.nextLong();
+                    System.out.println("------------------------- Update Successfully ----------------------------");
+                }
+                else  if (number == 9)
+                {
+                    System.out.print("Student Mobile Number : ");
+                    studentMobileNo = s.nextLong();
+                }
+                else  if (number == 10)
+                {
+                    System.out.print("Father Mobile Number : ");
+                    fatherMobileNo = s.nextLong();
+                    System.out.println("------------------------- Update Successfully ----------------------------");
+                }
+                else  if (number == 11)
+                {
+                    System.out.print("Email Address : ");
+                    email = s.next();
+                    System.out.println("------------------------- Update Successfully ----------------------------");
+                }
+                else
+                {
+                    System.out.println("---------------------------------------------------------------------------");
+                    System.out.print("Name (in Blocked Letter) :  ");
+                    studentName = s.next();
+                    System.out.print("Father Name : ");
+                    fatherName = s.next();
+                    System.out.print("Caste : ");
+                    caste = s.next();
+                    System.out.print("Date of Birth : ");
+                    dateOfBirth = s.next();
+                    System.out.print("Age : ");
+                    age = s.nextInt();
+                    System.out.print("CNIC Number : ");
+                    studentCNIC = s.nextLong();
+                    System.out.print("Fees : ");
+                    fees = s.nextInt();
+                    System.out.print("Father CNIC Number : ");
+                    fatherCINC = s.nextLong();
+                    System.out.print("Student Mobile Number : ");
+                    studentMobileNo = s.nextLong();
+                    System.out.print("Father Mobile Number : ");
+                    fatherMobileNo = s.nextLong();
+                    System.out.print("Email : ");
+                    email = s.next();
+                    System.out.println("------------------------- Update Successfully ----------------------------");
+                }
+            }
+        }
+        else{
+            System.out.println("Name : " + name + " not found. Please Enter the Correct Name.");
+        }
+    }
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+	      SchoolManagementSystem sms = new SchoolManagementSystem();
+        System.out.println("<<<<<<<<<<<<<<<<<<<<<<< Wel Come to School Management System  >>>>>>>>>>>>>>>>>>>>>>>>");
+        int number;
+        do
+        {
+            sms.setMenu();
+            System.out.println("Enter the Number (1 to 5)");
+            number = scanner.nextInt();
+
+            sms.performed(number);
+        }
+        while (number !=5);
+    }
+}
