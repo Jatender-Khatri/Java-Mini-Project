@@ -1,0 +1,20 @@
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        System.out.println(">>>>>>>>>>>>>>>>>>>>> WELL COME TO GYM MANAGEMENT SYSTEM >>>>>>>>>>>>>>>>>>>>>>");
+        Scanner j = new Scanner(System.in);
+        Information i = new Information();
+
+        int number;
+        do
+        {
+            i.setMenu();
+            System.out.print("Enter the Number (1 to 5) : ");
+            number = j.nextInt();
+
+            i.performed(number);
+        }while (number != 5);
+    }
+}
