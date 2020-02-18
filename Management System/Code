@@ -1,0 +1,158 @@
+import java.util.Scanner;
+
+public class Information {
+    Scanner s = new Scanner(System.in);
+    Management m = new Management();
+
+    public  void setMenu()
+    {
+        System.out.println("------------- Menu -------------");
+        System.out.println("1. Insert");
+        System.out.println("2. Delete");
+        System.out.println("3. Update");
+        System.out.println("4. View");
+        System.out.println("5. Close or Exit");
+    }
+    public  void performed(int choose)
+    {
+        if (choose == 1)
+        {
+            insert();
+        }
+        else if (choose == 2)
+        {
+            delete();
+        }
+        else  if (choose == 3) {
+            update();
+        }
+        else if (choose == 4)
+        {
+            view();
+        }
+        else
+        {
+            System.out.println("Thank you");
+        }
+    }
+    public void insert()
+    {
+        System.out.println("------------------------------------------------------------");
+        System.out.println("------------------- Fill the Information -----------------");
+        System.out.print("Name : ");
+        m.setName(s.next());
+        System.out.print("Roll Number : ");
+        m.setRollNo(s.next());
+        System.out.print("Fees : ");
+        m.setFees(s.nextInt());
+        System.out.print("Registartion Month : ");
+        m.setMonth(s.next());
+        System.out.print("Registratiion Year : ");
+        m.setYear(s.nextInt());
+        System.out.println("-------------------- Added Successfully----------------------");
+    }
+    public void delete()
+    {
+        System.out.println("------------------------------------------------------------");
+        System.out.print("Enter the Roll Number : ");
+        String rollNumber = s.next();
+        if (m.getRollNo().equals(rollNumber))
+        {
+            m.setName(null);
+            m.setYear(0);
+            m.setMonth(null);
+            m.setRollNo(null);
+            m.setFees(0);
+            System.out.println("------------------ Delete Successfully -----------------------");
+        }
+        else
+        {
+            System.out.println("Roll Number  " + rollNumber + " not found. Please Enter the Correct Roll Number." );
+        }
+    }
+    public void view()
+    {
+        {
+            System.out.println("------------------------------------------------------------");
+            System.out.println("Name : " + m.getName());
+            System.out.println("Roll No : " + m.getRollNo());
+            System.out.println("Fees : " + m.getFees());
+            System.out.println("Registration Month : " + m.getMonth());
+            System.out.println("Registration Year : " + m.getYear());
+            System.out.println("-------------------- View Successfully ----------------------");
+        }
+    }
+    public void update()
+    {
+        System.out.println("------------------------------------------------------------");
+        System.out.print("Enter the Roll Number : ");
+        String roll = s.next();
+        if (m.getRollNo().equals(roll))
+        {
+            System.out.println("1. Student Name");
+            System.out.println("2. Roll Number");
+            System.out.println("3. Fees");
+            System.out.println("4. Registration Month");
+            System.out.println("5. Registration Year");
+            System.out.println("6. Update All");
+            System.out.print("Enter the Number (1 to 6) : ");
+            int g = s.nextInt();
+            if (g == 1)
+            {
+                System.out.println("--------------------- Update Information --------------------");
+                System.out.print("Student Name : ");
+                m.setName(s.next());
+                System.out.println("------------------ Update Successfully ----------------------");
+
+            }
+            else  if (g == 2)
+            {
+                System.out.println("--------------------- Update Information --------------------");
+                System.out.print("Roll Number : ");
+                m.setRollNo(s.next());
+                System.out.println("------------------ Update Successfully ----------------------");
+            }
+            else if (g == 3)
+            {
+                System.out.println("--------------------- Update Information --------------------");
+                System.out.print("Fees : ");
+                m.setFees(s.nextInt());
+                System.out.println("------------------ Update Successfully ----------------------");
+            }
+            else if (g == 4)
+            {
+                System.out.println("--------------------- Update Information --------------------");
+                System.out.print("Registration Month : ");
+                m.setMonth(s.next());
+                System.out.println("------------------ Update Successfully ----------------------");
+            }
+            else if (g == 5)
+            {
+                System.out.println("--------------------- Update Information --------------------");
+                System.out.print("Registration Year : ");
+                m.setYear(s.nextInt());
+                System.out.println("------------------ Update Successfully ----------------------");
+            }
+            else
+            {
+                System.out.println("--------------------- Update Information --------------------");
+                System.out.print("Name : ");
+                m.setName(s.next());
+                System.out.print("Roll Number : ");
+                m.setRollNo(s.next());
+                System.out.print("Fees : ");
+                m.setFees(s.nextInt());
+                System.out.print("Registration Month : ");
+                m.setMonth(s.next());
+                System.out.print("Registration Year :  " );
+                m.setYear(s.nextInt());
+                System.out.println("------------------ Update Successfully ----------------------");
+            }
+        }
+        else
+        {
+            System.out.println("------------------------------------------------------------");
+            System.out.println("Roll Number " + roll + " not found. Please enter the Correct Roll Number. ");
+        }
+    }
+}
