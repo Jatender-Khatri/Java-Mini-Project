@@ -1,0 +1,43 @@
+public class Management {
+    private String name, rollNo, month;
+    private int  fees, year;
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getName() {
+        return this.name;
+    }
+
+    public void setRollNo(String rollNo) {
+        this.rollNo = rollNo;
+    }
+    public String getRollNo(){
+        return this.rollNo;
+    }
+
+    public void setMonth(String month) {
+        this.month = month;
+    }
+
+    public String getMonth() {
+        return this.month;
+    }
+
+    public void setFees(int fees) {
+        this.fees = fees;
+    }
+
+    public int getFees() {
+        return this.fees;
+    }
+
+    public void setYear(int year) {
+        this.year = year;
+    }
+
+    public int getYear() {
+        return this.year;
+    }
+}
