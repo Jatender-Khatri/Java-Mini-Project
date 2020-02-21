@@ -1,0 +1,110 @@
+public class Infomation {
+    private String accountHolderName, fatherName, caste, dateOfBirth, bank,accountNumber;
+    private  int age;
+    private float balance;
+    private  long accountHolderCNIC, fatherCNIC, accountHolderMobileNumber, fatherMobileNumber;
+
+    public void setAccountHolderName(String accountHolderName)
+    {
+        this.accountHolderName = accountHolderName;
+    }
+    public String getAccountHolderName()
+    {
+        return  this.accountHolderName;
+    }
+
+    public void setFatherName(String fatherName)
+    {
+        this.fatherName = fatherName;
+    }
+    public String getFatherName()
+    {
+        return  this.fatherName;
+    }
+
+    public void setCaste(String caste)
+    {
+        this.caste = caste;
+    }
+    public String getCaste()
+    {
+        return this.caste;
+    }
+
+    public void setDateOfBirth(String dateOfBirth)
+    {
+        this.dateOfBirth = dateOfBirth;
+    }
+    public String getDateOfBirth()
+    {
+        return  this.dateOfBirth;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+    public int getAge()
+    {
+        return  this.age;
+    }
+
+    public void setBalance(float balance) {
+        this.balance = balance;
+    }
+    public float getBalance()
+    {
+        return  this.balance;
+    }
+
+    public void setAccountHolderCNIC(long accountHolderCNIC) {
+        this.accountHolderCNIC = accountHolderCNIC;
+    }
+    public long getAccountHolderCNIC()
+    {
+        return  this.accountHolderCNIC;
+    }
+
+    public void setFatherCNIC(long fatherCNIC) {
+        this.fatherCNIC = fatherCNIC;
+    }
+    public  long getFatherCNIC()
+    {
+        return  this.fatherCNIC;
+    }
+    public void setAccountHolderMobileNumber(long accountHolderCNIC)
+    {
+        this.accountHolderMobileNumber = accountHolderMobileNumber;
+    }
+
+    public long getAccountHolderMobileNumber() {
+        return this.accountHolderMobileNumber;
+    }
+
+    public void setFatherMobileNumber(long fatherMobileNumber) {
+        this.fatherMobileNumber = fatherMobileNumber;
+    }
+    public long getFatherMobileNumber()
+    {
+        return  this.fatherMobileNumber;
+    }
+
+    public void setBank(String bank)
+    {
+        this.bank = bank;
+    }
+
+    public String getBank()
+    {
+        return this.bank;
+    }
+
+    public void setAccountNumber(String accountNumber)
+    {
+        this.accountNumber = accountNumber;
+    }
+
+    public String getAccountNumber()
+    {
+        return this.accountNumber;
+    }
+}
