@@ -1,0 +1,19 @@
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        Bank b = new Bank();
+        System.out.println(">>>>>>>>>>>>>>>>>>>> Well Come to Bank Management System >>>>>>>>>>>>>>>>>>>>>>>");
+        Scanner k = new Scanner(System.in);
+
+        int choose;
+        do {
+            b.setMenu();
+            System.out.print("Enter the number (1 to 6) : ");
+            choose = k.nextInt();
+            System.out.println("-------------------------------------------------------------------------------");
+            b.getNumber(choose);
+        }while (choose != 6);
+    }
+}
